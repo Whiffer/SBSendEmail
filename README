@@ -1,0 +1,11 @@
+This project is an example of how to COMPOSE (but not send) an e-mail from a Mac App.
+
+Apple's original sample program uses ScriptingBridge to compose and send an e-mail from a Mac app, but is not Sandboxed.  After SandBoxing, It doesn’t appear that it is possible to SEND an e-mail using ScriptingBridge, but it does appear to be possible to compose an e-mail that the user can then send himself.
+
+The following has been done to Apple’s original SBSendEmail sample program:
+- Turned on App Sandboxing, thus adding an entitlements file
+- Added additional entitlement for: com.apple.security.scripting-targets
+- Modified app to activate the mail app and terminiate instead of trying to send the e-mail.
+- Converted to ARC
+- Converted to modern obj-C
+-  
